@@ -5,22 +5,15 @@
 
 pipenv install django==2.1, entered after Z:\3rdYear\WebDev\DjangoTutorial>
 
-let this load fully then enter , `` pipenv shell``
+- let this load fully then enter , `` pipenv shell``
 
-
-
-if i am to reload a project i only need: 
+- if i am to reload a project i only need: 
 change to mysite, then ``pipenv shell``
 
-
-check if django is available by running: ``py manage.py``
-
-``py manage.py`` NOT used in shell!!
+- check if django is available by running: ``py manage.py``
 
 
-Writing your first Django app, part 3¶
+- HOW TO RUN THE SERVER:  py manage.py runserver
+- OPENING WEB PAGE: localhost:8000 in browser
 
-the number you enter after polls/ is the number that will be displayed as the "question you are looking at " on the webpage
-
-
-a new directory is a new foulder!!
+- a new directory is a new folder!!
