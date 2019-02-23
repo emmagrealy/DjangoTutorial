@@ -1,108 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Home Page</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;} 
-    }
-  </style>
-</head>
-<body style = "background-color:white">
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#"> <b> Logo </b></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  
-<div class="container-fluid text-center">    
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <p><a href="https://www.facebook.com/campaign/landing.php?&campaign_id=1547699031&extra_1=s%7Cc%7C293767682339%7Ce%7Cfacebook%20%27%7C&placement=&creative=293767682339&keyword=facebook%20%27&partner_id=googlesem&extra_2=campaignid%3D1547699031%26adgroupid%3D58971057836%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D1t1%26target%3D%26targetid%3Dkwd-360705453827%26loc_physical_ms%3D1007850%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=EAIaIQobChMIqP252MPF4AIVxrTtCh3nGg3yEAAYASAAEgLNJvD_BwE">Facebook</a></p>
-      <p><a href="https://www.google.ie/webhp?hl=en&sa=X&ved=0ahUKEwjX3aHrw8XgAhWUonEKHXZuD_EQPAgH">Google</a></p>
-
-    </div>
-    <div class="col-sm-8 text-left"> 
-      <h1 style="text-align:center;">Welcome</h1>
-      <hr>
-      <h3 style="text-align:center;">Please fill out the form below</h3>
-      <p> 
-        <form action="{% url 'home:loginSuccess' %}" method="post" style="text-align:center;">
-          {% csrf_token %}
-          First name:<br>
-          <input type="text" name="firstname">
-          <br>
-          Last name:<br>
-          <input type="text" name="lastname">
-          <br><br>
-          <input type="submit" value="Submit">
-        </form> 
-        
-      </p>
-    </div>
-    <div class="col-sm-2 sidenav">
-      <div class="well">
-        <p>ADS</p>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="SignupModel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="SignupModel">Login / Sign up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="well">
-        <p>ADS</p>
+      <div class="modal-body">
+          <form action="{% url 'home:signUp' %}" method="POST">
+              {% csrf_token %}
+  
+              <div class="form-group">
+                  <label for="exampleInputName1">Name</label>
+                  <input name ='name' type="name" class="form-control" id="exampleInputName1" placeholder="Name">
+                </div> 
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input name ='email' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input name ='password' type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
       </div>
     </div>
   </div>
 </div>
 
-<footer class="container-fluid text-center">
-  <p>Home Page Footer</p>
-</footer>
-
-</body>
-</html>
