@@ -73,18 +73,18 @@
       <hr>
       <h3 style="text-align:center;">Please Sign Up below</h3>
       <p> 
-        <form action="{% url 'home:loginSuccess' %}" method="post" style="text-align:center;">
+        <form action="{% url 'home:signUp' %}" method="post" style="text-align:center;">
           {% csrf_token %}
           Username:<br>
           <input type="text" name="Username">
           <br>
           Password:<br>
           <input type="text" name="Password">
-          <br><br>
+          <br>
           Email:<br>
           <input type="text" name="Email">
           <br>
-          <input type="submit" value="Submit">
+          <input type="submit" value="Sign Up">
         </form>  
       </p>
 

@@ -11,18 +11,14 @@ def loginSuccess(request):
     print(request.POST)
     username = request.POST.get("Username")
     password = request.POST.get("Password")
-    return render(request, 'home/loginSuccess.html', {'Username': username}, {'Password': password})
+    return render(request, 'home/loginSuccess.html', {'Username': username, 'Password': password})
+
+def signUpForm(request):
+    return render(request, 'home/signUpForm.html')
 
 def signUp(request):
-    username = request.POST['name']
-    password = request.POST['password']
-    user = authenticate(request, username=username, password=password)
-    if user is not None:
-        login(request, user)
-        return render(request ,'home/loginSuccess.html')
-    else:
-          user = User.objects.create_user(request.POST['name'], request.POST['email'], request.POST['password'])
-          user.save()
-
-    #return HttpResponseRedirect(reverse('home:index'))
-
+    print(request.POST)
+    username = request.POST.get("Username")
+    password = request.POST.get("Password")
+    email = request.POST.get("Email")
+    return render(request, 'home/loginSuccess.html', {'Username': username, 'Password': password, 'Email': email})
