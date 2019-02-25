@@ -7,5 +7,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     # log in success leads to this page
     path('loginSuccess/', views.loginSuccess, name='loginSuccess')
+    #sign up success leads here
+    #path('loginSuccess/', views.loginSuccess, name='loginSuccess')
 
 ]

@@ -58,7 +58,7 @@
         <li class="active"><a href="#">Home</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sign Up</a></li>
       </ul>
     </div>
   </div>
@@ -71,7 +71,7 @@
     <div class="col-sm-8 text-left"> 
       <h1 style="text-align:center;">Welcome</h1>
       <hr>
-      <h3 style="text-align:center;">Please Login below</h3>
+      <h3 style="text-align:center;">Please Sign Up below</h3>
       <p> 
         <form action="{% url 'home:loginSuccess' %}" method="post" style="text-align:center;">
           {% csrf_token %}
@@ -81,14 +81,16 @@
           Password:<br>
           <input type="text" name="Password">
           <br><br>
+          Email:<br>
+          <input type="text" name="Email">
+          <br>
           <input type="submit" value="Submit">
         </form>  
       </p>
 
-
       <p>
-        <h3 style="text-align:center;">If you wish to sign up, click below!</h3>
-        <button style="text-align:center;" type="submit" class="btn btn-primary">Sign Up</button>
+        
+
       </p>
     </div>
   </div>
